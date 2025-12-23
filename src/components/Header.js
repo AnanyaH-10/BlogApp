@@ -18,6 +18,7 @@ const Header = () => {
     const handleLogout =()=>{
         try {
             dispatch(authActions.logout())
+            localStorage.removeItem('userId');
             toast.success('Logout Successfully');
             navigate("/login");
         } catch (error) {
@@ -52,5 +53,6 @@ const Header = () => {
     </>
   );
 };
+
 
 export default Header
